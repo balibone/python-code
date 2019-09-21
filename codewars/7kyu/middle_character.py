@@ -5,6 +5,3 @@ def get_middle(s):
         return s[mid_index:mid_index+2]
     else:
         return s[mid_index]
-
-
-print(get_middle("hell"))
