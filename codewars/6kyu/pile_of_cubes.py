@@ -14,10 +14,14 @@ def find_nb(m):
     b = 1
     c = -2*root_of_vol
     discriminant = (b**2) - (4*a*c)
-    n = int((-b + math.sqrt(discriminant))/(2*a))
+    n = int(-b + math.sqrt(discriminant))//(2*a)
 
-    # even after solving for positive N, there is a chance it might not work back to the total volume.
-    # 2 reasons: 1) it might have decimal points & 2) buggy test cases
+    # because `m` is integer, derived value should also be an integer and not
+    # float so that `m` and `derived` can be compared using equality match.
+    # Also, this checks the case where `n` is not a whole number
     if ((n * (n + 1)) // 2) ** 2 == m:
         return n
     return -1
+
+
+print(find_nb(8032998032261904026))
