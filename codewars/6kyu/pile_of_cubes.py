@@ -18,10 +18,8 @@ def find_nb(m):
 
     # because `m` is integer, derived value should also be an integer and not
     # float so that `m` and `derived` can be compared using equality match.
+    # why? because floats with very large digits are represented in scientfici notation in Python.
     # Also, this checks the case where `n` is not a whole number
     if ((n * (n + 1)) // 2) ** 2 == m:
         return n
     return -1
-
-
-print(find_nb(8032998032261904026))
